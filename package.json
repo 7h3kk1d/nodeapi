@@ -1,0 +1,17 @@
+{
+  "name": "guaranteedrate",
+  "version": "1.0.0",
+  "description": "Home work problem for guaranteed rate",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+      "mocha": "~3.2.0",
+      "csv": "~1.1.0",
+      "yargs": "~6.6.0",
+      "moment": "~2.17"
+  },
+  "author": "Alexander Bandukwala <alexander@bandukwala.me>",
+  "license": "UNLICENSED"
+}
