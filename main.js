@@ -27,14 +27,17 @@ var csv = require('csv');
 var moment = require('moment');
 
 
+// Just using an array for storage simplicity
 var records = []
+
+// CSV Parsing
 var parseOptions = { "delimiter" : argv['d'] }
 var parser = csv.parse(parseOptions);
 var input = fs.createReadStream(argv._[0]);
 
-// Sort an array of arrays by the column value
-function sortByColumn(columnIndex) {
-    return function(a, b) {
+// Sort an array of arrays by the columns values
+function sortByColumn(columnIndices) {
+    return (a, b) => {
         if(a[columnIndex] < b[columnIndex])
             return -1;
         if(a[columnIndex] > b[columnIndex])
@@ -49,8 +52,7 @@ function parseRecord(rawRecord) {
     return rawRecord;
 }
 
-
-
+// Push each row to the records object
 parser.on('data', (record) => {
     records.push(parseRecord(record));
 });
