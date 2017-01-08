@@ -4,14 +4,18 @@
   "description": "Home work problem for guaranteed rate",
   "main": "main.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha -- -R spec"
   },
   "dependencies": {
       "mocha": "~3.2.0",
       "csv": "~1.1.0",
       "yargs": "~6.6.0",
       "moment": "~2.17",
-      "express": "~4.14"
+      "express": "~4.14",
+      "should": "~11.1.0",
+      "istanbul": "~0.4.5",
+      "eslint": "*"
   },
   "author": "Alexander Bandukwala <alexander@bandukwala.me>",
   "license": "UNLICENSED"
