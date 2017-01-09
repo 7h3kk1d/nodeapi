@@ -27,13 +27,16 @@ var argv = require('yargs') // Adds cli options
 // Libraries
 var fs = require('fs');
 var csv = require('csv');
+var parse = require('csv-parse/lib/sync');
 var express = require('express');
+var bodyParser = require('body-parser');
 
 // Just using an array for storage simplicity
 var records = require('./records')({columnNames: columnNames,
                                     dateFormat: dateFormat,
                                     delimiter: argv.d});
 var app = express();
+app.use(bodyParser.text());
 
 // CSV Parsing
 var parseOptions = { delimiter : argv.d,
@@ -79,6 +82,11 @@ app.get('/records/:sortColumn', function(req, res) {
 
     sorted = sorted.sort(sortColumns, sortDirection);
     res.send({records: sorted.records});
+});
+
+app.post('/records', function(req, res) {
+    records.push(parse(req.body, parseOptions));
+    res.send();
 });
 
 app.listen(3000, function() {
