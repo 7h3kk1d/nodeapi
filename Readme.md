@@ -1,4 +1,4 @@
-Guaranteed Rate HW Assn
+Node API
 =======================
 Usage: `Run node main.js -h`
 

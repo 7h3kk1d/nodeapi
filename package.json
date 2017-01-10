@@ -1,7 +1,7 @@
 {
-  "name": "guaranteedrate",
+  "name": "nodeapi",
   "version": "1.0.0",
-  "description": "Home work problem for guaranteed rate",
+  "description": "Sample node api and file parser",
   "main": "main.js",
   "scripts": {
     "test": "mocha",
